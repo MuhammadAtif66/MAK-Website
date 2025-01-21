@@ -1,29 +1,29 @@
-const carousel = document.querySelector('.carousel');
-    const prevButton = document.getElementById('prev');
-    const nextButton = document.getElementById('next');
+// const carousel = document.querySelector('.carousel');
+//     const prevButton = document.getElementById('prev');
+//     const nextButton = document.getElementById('next');
 
-    let currentIndex = 0;
-    const totalCards = 6;
-    const cardsPerView = 3;
+//     let currentIndex = 0;
+//     const totalCards = 6;
+//     const cardsPerView = 3;
 
-    function updateCarousel() {
-      const offset = -(currentIndex * 50.1);
-      carousel.style.transform = `translateX(${offset}%)`;
-    }
+//     function updateCarousel() {
+//       const offset = -(currentIndex * 50.1);
+//       carousel.style.transform = `translateX(${offset}%)`;
+//     }
 
-    nextButton.addEventListener('click', () => {
-      if (currentIndex < totalCards / cardsPerView - 1) {
-        currentIndex++;
-        updateCarousel();
-      }
-    });
+//     nextButton.addEventListener('click', () => {
+//       if (currentIndex < totalCards / cardsPerView - 1) {
+//         currentIndex++;
+//         updateCarousel();
+//       }
+//     });
 
-    prevButton.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-      }
-    });
+//     prevButton.addEventListener('click', () => {
+//       if (currentIndex > 0) {
+//         currentIndex--;
+//         updateCarousel();
+//       }
+//     });
 
 
 
@@ -140,49 +140,246 @@ function showDetails(title, description) {
 
 
   // ------------campuses-------
-  const slidesContainer = document.querySelector('.campus-slides');
-const slides = slidesContainer.children;
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-const totalSlides = slides.length;
+//   const slidesContainer = document.querySelector('.campus-slides');
+// const slides = slidesContainer.children;
+// const prevBtn = document.querySelector('.prev');
+// const nextBtn = document.querySelector('.next');
+// const totalSlides = slides.length;
 
-let currentIndex1 = 1;
+// let currentIndex1 = 1;
 
-// Clone the first and last slides for seamless looping
-const firstClone = slides[0].cloneNode(true);
-const lastClone = slides[totalSlides - 1].cloneNode(true);
 
-slidesContainer.appendChild(firstClone);
-slidesContainer.insertBefore(lastClone, slidesContainer.firstChild);
+// const firstClone = slides[0].cloneNode(true);
+// const lastClone = slides[totalSlides - 1].cloneNode(true);
 
-// Set the initial position
-slidesContainer.style.transform = `translateX(-${currentIndex1 * 50}%)`;
+// slidesContainer.appendChild(firstClone);
+// slidesContainer.insertBefore(lastClone, slidesContainer.firstChild);
 
-const updateSlider = () => {
-  slidesContainer.style.transition = 'transform 0.5s ease-in-out';
-  slidesContainer.style.transform = `translateX(-${currentIndex1 * 50}%)`;
-};
+// slidesContainer.style.transform = `translateX(-${currentIndex1 * 50}%)`;
 
-nextBtn.addEventListener('click', () => {
-  currentIndex1++;
-  updateSlider();
-  if (currentIndex1 === totalSlides) {
-    setTimeout(() => {
-      slidesContainer.style.transition = 'none';
-      currentIndex1 = 0;
-      slidesContainer.style.transform = `translateX(-${currentIndex1 * 50}%)`;
-    }, 500);
+// const updateSlider = () => {
+//   slidesContainer.style.transition = 'transform 0.5s ease-in-out';
+//   slidesContainer.style.transform = `translateX(-${currentIndex1 * 50}%)`;
+// };
+
+// nextBtn.addEventListener('click', () => {
+//   currentIndex1++;
+//   updateSlider();
+//   if (currentIndex1 === totalSlides) {
+//     setTimeout(() => {
+//       slidesContainer.style.transition = 'none';
+//       currentIndex1 = 0;
+//       slidesContainer.style.transform = `translateX(-${currentIndex1 * 50}%)`;
+//     }, 500);
+//   }
+// });
+
+// prevBtn.addEventListener('click', () => {
+//   currentIndex1--;
+//   updateSlider();
+//   if (currentIndex1 === 0) {
+//     setTimeout(() => {
+//       slidesContainer.style.transition = 'none';
+//       currentIndex1 = totalSlides - 0;
+//       slidesContainer.style.transform = `translateX(-${currentIndex1 * 50}%)`;
+//     }, 500);
+//   }
+// });
+
+
+
+
+const slidesContainer = document.querySelector('.campus-slides');
+  const slides = slidesContainer.children;
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  const totalSlides = slides.length;
+
+  let currentIndex = 1;
+
+  // Clone the first and last slides for seamless looping
+  const firstClone = slides[0].cloneNode(true);
+  const lastClone = slides[totalSlides - 1].cloneNode(true);
+
+  slidesContainer.appendChild(firstClone);
+  slidesContainer.insertBefore(lastClone, slidesContainer.firstChild);
+
+  // Set the initial position
+  slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+  const updateSlider = () => {
+    slidesContainer.style.transition = 'transform 0.5s ease-in-out';
+    slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+  };
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    updateSlider();
+    if (currentIndex === totalSlides) {
+      setTimeout(() => {
+        slidesContainer.style.transition = 'none';
+        currentIndex = 0;
+        slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }, 500);
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex--;
+    updateSlider();
+    if (currentIndex === 0) {
+      setTimeout(() => {
+        slidesContainer.style.transition = 'none';
+        currentIndex = totalSlides - 0;
+        slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }, 500);
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   const carousel1 = document.querySelector('.carousel');
+// const prevButton1 = document.getElementById('prev');
+// const nextButton1 = document.getElementById('next');
+
+// let currentIndex3 = 0; 
+// const totalCards3 = 6; 
+// const cardsPerView3 = 3; 
+
+// function updateCarousel3() {
+//   const isSmallScreen = window.matchMedia('(max-width: 600px)').matches;
+
+//   if (isSmallScreen) {
+   
+//     const offsett = -(currentIndex3 * (300 / cardsPerView3)); 
+//     carousel1.style.transform = `translateY(${offsett}%)`;
+//   } else {
+    
+//     const offsett = -(currentIndex3 * (300 / cardsPerView3)); 
+//     carousel1.style.transform = `translateX(${offsett}%)`;
+//   }
+// }
+
+
+// nextButton1.addEventListener('click', () => {
+//   if (currentIndex3 < Math.ceil(totalCards3 / cardsPerView3) - 1) {
+//     currentIndex3++;
+//     updateCarousel3();
+//   }
+// });
+
+// prevButton1.addEventListener('click', () => {
+//   if (currentIndex3 > 0) {
+//     currentIndex3--;
+//     updateCarousel3();
+//   }
+// });
+
+
+// window.addEventListener('resize', updateCarousel3);
+
+
+// updateCarousel3();
+
+
+
+
+
+
+const carousell = document.querySelector('.carousel');
+const prevButtonn = document.getElementById('prev');
+const nextButtonn = document.getElementById('next');
+
+let currentIndex3 = 0; // Current index of the set of cards
+const totalCards3 = 6; // Total number of cards
+const cardsPerView3 = 3; // Number of cards visible at a time
+
+function updateCarousell() {
+  const screenWidth = window.innerWidth; // Get the screen width
+
+  if (screenWidth <= 600) {
+    // For screens <= 600px: Vertical scrolling
+    const offsett = -(currentIndex3 * 100); // Move vertically by 100% of the card height
+    carousell.style.transform = `translateY(${offsett}%)`;
+  } else {
+    // For screens > 600px: Horizontal scrolling
+    const offsett = -(currentIndex3 * 50.1); // Move horizontally by 100% of the card width
+    carousell.style.transform = `translateX(${offsett}%)`;
+  }
+}
+
+// Handle "Next" button click
+nextButtonn.addEventListener('click', () => {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth <= 600) {
+    // For small screens: Vertical scrolling
+    if (currentIndex3 < Math.ceil(totalCards3 / cardsPerView3) - 1) {
+      currentIndex3++;
+      updateCarousell();
+    }
+  } else {
+    // For large screens: Horizontal scrolling
+    if (currentIndex3 < totalCards3 / cardsPerView3 - 1) {
+      currentIndex3++;
+      updateCarousell();
+    }
   }
 });
 
-prevBtn.addEventListener('click', () => {
-  currentIndex1--;
-  updateSlider();
-  if (currentIndex1 === 0) {
-    setTimeout(() => {
-      slidesContainer.style.transition = 'none';
-      currentIndex1 = totalSlides - 0;
-      slidesContainer.style.transform = `translateX(-${currentIndex1 * 50}%)`;
-    }, 500);
+// Handle "Previous" button click
+prevButtonn.addEventListener('click', () => {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth <= 600) {
+    // For small screens: Vertical scrolling
+    if (currentIndex3 > 0) {
+      currentIndex3--;
+      updateCarousell();
+    }
+  } else {
+    // For large screens: Horizontal scrolling
+    if (currentIndex3 > 0) {
+      currentIndex3--;
+      updateCarousell();
+    }
   }
 });
+
+// Update the carousel layout dynamically when resizing the screen
+window.addEventListener('resize', updateCarousell);
+
+// Initialize the carousel on page load
+updateCarousell();
+
+
+
+
